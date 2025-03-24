@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <style>
+
+
+
+ .background {
+    background-color: black;
+    width:258px;
+    height:64px;
+    position: relative;
+ }
+
+ #redghost {
+   height:56px;
+   width: 56px;
+   position:absolute;
+   top:4px;
+   left:4px;
+ }
+
+ #orangeghost {
+   height:56px;
+   width: 56px;
+   position:absolute;
+   top:4px;
+   left:68px;
+ }
+ #blueghost {
+   height:56px;
+   width: 56px;
+   position:absolute;
+   top:4px;
+   left:132px;
+ }
+
+ #Pac-Man {
+   height:56px;
+   width: 56px;
+   position:absolute;
+   top:4px;
+   left:196px;
+ }
+
+ #redghost > div {
+   background-color: red;
+ }
+
+ #orangeghost >div {
+   background-color: darkorange;
+ }
+
+ #blueghost > div {
+   background-color: #33acff;
+ }
+
+ #Pac-Man > div {
+   background-color: yellow;
+ }
+ .bodtop {
+   position: relative;
+   height: 4px;
+   width: 16px;
+   left:20px;
+ }
+
+ .bod2 {
+   position: relative;
+   height: 4px;
+   width:32px;
+   left: 12px;
+ }
+
+ .bod3 {
+   position: relative;
+   height: 4px;
+   width:40px;
+   left: 8px;
+ }
+
+ .bod4 {
+   position: relative;
+   height: 12px;
+   width: 48px;
+   left:4px;
+ }
+
+ .bodmain {
+   position: relative;
+   height: 24px;
+ }
+
+ .legtop1 {
+   position: relative;
+   height: 4px;
+   width: 16px;
+ }
+
+ .legtop2 {
+   position:absolute;
+   height:4px;
+   width:16px;
+   left:20px;
+   top:48px;
+ }
+
+ .legtop3 {
+   position:absolute;
+   height:4px;
+   width:16px;
+   left:40px;
+   top:48px;
+ }
+ 
+ .legbot1 {
+   position: absolute;
+   height: 4px;
+   width: 8px;
+   top: 52px;
+   left:4px;
+ }
+
+ .legbot2 {
+   position: absolute;
+   height: 4px;
+   width: 8px;
+   top: 52px;
+   left:24px;
+ }
+
+ .legbot3 {
+   position: absolute;
+   height: 4px;
+   width: 8px;
+   top: 52px;
+   left:44px;
+ }
+
+ #redghost >.eyetop {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 16px;
+ }
+
+ #orangeghost >.eyetop {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 16px;
+ }
+
+ #blueghost >.eyetop {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 16px;
+ }
+
+ #redghost >.eyetop2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 40px;
+ }
+
+ #orangeghost >.eyetop2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 40px;
+ }
+
+ #blueghost >.eyetop2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top: 16px;
+   left: 40px;
+ }
+
+ #redghost >.eyemain {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 12px;
+ }
+
+ #orangeghost >.eyemain {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 12px;
+ }
+
+ #blueghost >.eyemain {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 12px;
+ }
+
+ #redghost >.eyemain2 {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 36px;
+ }
+
+ #orangeghost >.eyemain2 {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 36px;
+ }
+
+ #blueghost >.eyemain2 {
+   background-color: white;
+   height: 12px;
+   width: 16px;
+   position: absolute;
+   top:20px;
+   left: 36px;
+ }
+
+ #redghost >.eyebot {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 16px;
+ }
+
+ #orangeghost >.eyebot {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 16px;
+ }
+
+ #blueghost >.eyebot {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 16px;
+ }
+
+ #redghost >.eyebot2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 40px;
+ }
+
+ #orangeghost >.eyebot2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 40px;
+ }
+
+ #blueghost >.eyebot2 {
+   background-color: white;
+   height: 4px;
+   width: 8px;
+   position: absolute;
+   top:32px;
+   left: 40px;
+ }
+
+ #redghost >.pupil {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:20px;
+ }
+
+ #redghost >.pupil2 {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:44px;
+ }
+
+ #orangeghost >.pupil {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:20px;
+ }
+
+ #orangeghost >.pupil2 {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:44px;
+ }
+
+ #blueghost >.pupil {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:20px;
+ }
+
+ #blueghost >.pupil2 {
+   background-color: blue;
+   height: 8px;
+   width: 8px;
+   position:absolute;
+   top:24px;
+   left:44px;
+ }
+
+ .p1 {
+   height: 4px;
+   width: 20px;
+   position: relative;
+   left: 16px;
+   top: 4px;
+ }
+
+ .p2 {
+   height: 4px;
+   width: 36px;
+   position: relative;
+   left: 8px;
+   top:4px;
+ }
+
+ .p3 {
+   height:8px;
+   width:44px;
+   position: relative;
+   left:4px;
+   top: 4px;
+ }
+
+ .p4 {
+   height:4px;
+   width:40px;
+   position: relative;
+   top: 4px;
+ }
+
+ .p5 {
+   height: 4px;
+   width: 28px;
+   position: relative;
+   top: 4px;
+ }
+
+ .p6 {
+   height:4px;
+   width:20px;
+   position: relative;
+   top: 4px;
+ }
+
+ .p7 {
+   height: 4px;
+   width: 28px;
+   position: relative;
+   top: 4px;
+ }
+
+ .p8 {
+   height:4px;
+   width:40px;
+   position: relative;
+   top: 4px;
+ }
+
+ .p9 {
+   height:8px;
+   width:44px;
+   position: relative;
+   left:4px;
+   top: 4px;
+ }
+
+ .p10 { 
+   height: 4px;
+   width: 36px;
+   position: relative;
+   left: 8px;
+   top: 4px;
+ }
+
+ .p11 {
+   height: 4px;
+   width: 20px;
+   position: relative;
+   left: 16px;
+   top: 4px;
+ }
+    </style>
+</head>
+<body>
+    <div class="background">
+      <div id="redghost">
+        <div class="bodtop"></div>
+        <div class="bod2"></div>
+        <div class="bod3"></div>
+        <div class="bod4"></div>
+        <div class="bodmain"></div>
+        <div class="legtop1"></div>
+        <div class="legbot1"></div>
+        <div class="legtop2"></div>
+        <div class="legbot2"></div>
+        <div class="legtop3"></div>
+        <div class="legbot3"></div>
+        <div class="eyetop"></div>
+        <div class="eyemain"></div>
+        <div class="eyebot"></div>
+        <div class="eyetop2"></div>
+        <div class="eyemain2"></div>
+        <div class="eyebot2"></div>
+        <div class="pupil"></div>
+        <div class="pupil2"></div>
+      </div>
+        
+      <div id="orangeghost">
+         <div class="bodtop"></div>
+        <div class="bod2"></div>
+        <div class="bod3"></div>
+        <div class="bod4"></div>
+        <div class="bodmain"></div>
+        <div class="legtop1"></div>
+        <div class="legbot1"></div>
+        <div class="legtop2"></div>
+        <div class="legbot2"></div>
+        <div class="legtop3"></div>
+        <div class="legbot3"></div>
+        <div class="eyetop"></div>
+        <div class="eyemain"></div>
+        <div class="eyebot"></div>
+        <div class="eyetop2"></div>
+        <div class="eyemain2"></div>
+        <div class="eyebot2"></div>
+        <div class="pupil"></div>
+        <div class="pupil2"></div>
+      </div>
+        
+      <div id="blueghost">
+         <div class="bodtop"></div>
+        <div class="bod2"></div>
+        <div class="bod3"></div>
+        <div class="bod4"></div>
+        <div class="bodmain"></div>
+        <div class="legtop1"></div>
+        <div class="legbot1"></div>
+        <div class="legtop2"></div>
+        <div class="legbot2"></div>
+        <div class="legtop3"></div>
+        <div class="legbot3"></div>
+        <div class="eyetop"></div>
+        <div class="eyemain"></div>
+        <div class="eyebot"></div>
+        <div class="eyetop2"></div>
+        <div class="eyemain2"></div>
+        <div class="eyebot2"></div>
+        <div class="pupil"></div>
+        <div class="pupil2"></div>
+      </div>
+      <div id="Pac-Man">
+         <div class="p1"></div>
+         <div class="p2"></div>
+         <div class="p3"></div>
+         <div class="p4"></div>
+         <div class="p5"></div>
+         <div class="p6"></div>
+         <div class="p7"></div>
+         <div class="p8"></div>
+         <div class="p9"></div>
+         <div class="p10"></div>
+         <div class="p11"></div>
+      </div>
+       
+
+      
+        
+    </div>
+    
+</body>
+</html>
